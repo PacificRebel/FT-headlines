@@ -5,7 +5,7 @@ import Headlines from './Headlines'
 function App() {
     return(
       <div>
-      <p><Headlines /></p>
+      <span><Headlines /></span>
       </div>
     )
   }
