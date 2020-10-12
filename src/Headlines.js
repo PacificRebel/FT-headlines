@@ -5,16 +5,9 @@ const Headlines = () => {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    fetch("https://api.ft.com/content/search/v1?apiKey=API_KEY", {
-      method: "POST",
-      // mode: 'no-cors',
-      headers: {
-        'Content-Type':	'application/json',
-        'Access-Control-Allow-Origin': '*'
-      }
-      })
+    fetch("https://api.nytimes.com/svc/topstories/v2/home.json?api-key=NY_API_KEY")
     .then(response => response.json())
-    .then(data => setItems(data["articles"]["title"]))
+    .then(data => setItems(data["status"]))
   }, [])
 
   return (
@@ -23,5 +16,7 @@ const Headlines = () => {
     </div>
   )
 }
+
+console.log(useEffect)
 
 export default Headlines
